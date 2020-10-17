@@ -1,5 +1,5 @@
 // const url = 'http://localhost:8080/'
-const url = 'https://instagram-clone-as.herokuapp.com/'
+const url = 'http://instagram-clone-as.herokuapp.com/'
 
 $(document).ready(function() {
 // LIKE 

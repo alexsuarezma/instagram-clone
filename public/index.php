@@ -4,7 +4,7 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
-
+header("access-control-allow-origin: *");
 /*
 |--------------------------------------------------------------------------
 | Check If Application Is Under Maintenance
