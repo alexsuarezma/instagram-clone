@@ -27,7 +27,7 @@
                         <div class="w-full flex">
                             <div class="w-1/4 flex justify-center items-center">
                                 @if(Auth::user()->profile_photo_path)
-                                    <img class="h-12 w-12 rounded-full object-cover" src="{{ url('/user/avatar/'.Auth::user()->id) }}" alt="" width="150">
+                                    <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_path }}" alt="" width="150">
                                 @else
                                     <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="" width="150">
                                 @endif

@@ -7,7 +7,7 @@
     </x-slot>
     
     <div class="bg-gray-50 pt-8">
-        <div class="flex justify-center mx-auto w-4/6 h-screen lg:w-4/6 w-full h-auto lg:px-8 px-0">
+        <div class="flex justify-center mx-auto w-4/6 h-auto lg:w-4/6 w-full h-auto lg:px-8 px-0">
             @php    
                 $bloque = 1;    
                 $item = 0;

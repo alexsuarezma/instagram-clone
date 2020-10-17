@@ -10,12 +10,12 @@
     
         <div class="mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden"> 
-                <div class="w-full h-screen flex justify-center border-b border-gray-200">
+                <div class="w-full h-auto flex justify-center border-b border-gray-200">
                     <div class="w-2/3 ">
                         <div class="flex border-b border-gray-400 pb-4" style="height:220px;">
                             <div class="w-2/6 flex justify-center items-center">
                                 @if($user->profile_photo_path)
-                                    <img class="w-40 rounded-full object-cover" src="{{ url('/user/avatar/'.$user->id) }}" alt="{{ $user->name }}">
+                                    <img class="w-40 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
                                 @else
                                     <img class="w-40 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$user->name.'+'.$user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $user->name }}">
                                 @endif
@@ -106,7 +106,7 @@
                                                 margin: auto;
                                                 min-height: 100%;
                                                 min-width: 100%;" 
-                                                src="{{ url('/user/image/'.$image->id) }}" alt="Imagen"
+                                                src="{{ $image->image_path }}" alt="Imagen"
                                         />
                                         <div class="middle">
                                             <div class="icons">

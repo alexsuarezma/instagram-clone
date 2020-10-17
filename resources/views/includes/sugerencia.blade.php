@@ -3,7 +3,7 @@
         <div class="flex items-center px-6 py-4">
             <div class="m-2">
                 @if(Auth::user()->profile_photo_path)
-                    <img class="h-12 w-12 rounded-full object-cover" src="{{ url('/user/avatar/'.\Auth::user()->id) }}" alt="{{ \Auth::user()->name }}">
+                    <img class="h-12 w-12 rounded-full object-cover" src="{{ \Auth::user()->profile_photo_path }}" alt="{{ \Auth::user()->name }}">
                 @else
                     <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ \Auth::user()->name }}">
                 @endif
@@ -24,7 +24,7 @@
                         <li class="flex justify-between">
                             <a class="py-1 px-3 flex items-center" href="{{ route('user.profile',['id' => $user->id]) }}">
                                 @if($user->profile_photo_path)
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ url('/user/avatar/'.$user->id) }}" alt="{{ $user->name }}">
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
                                 @else
                                     <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$user->name.'+'.$user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $user->name }}">
                                 @endif

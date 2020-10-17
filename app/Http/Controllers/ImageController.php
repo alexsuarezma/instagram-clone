@@ -32,10 +32,15 @@ class ImageController extends Controller
         if($image_path){
             
             // UPLOAD IMAGES
-            $image_path_name = time().$image_path->getClientOriginalName();
-            Storage::disk('images')->put( $image_path_name, File::get($image_path) );
+            // $image_path_name = time().$image_path->getClientOriginalName();
+            // Storage::disk('images')->put( $image_path_name, File::get($image_path) );
+            
+            $image_path_name = $image_path->store('images','s3');
+            // Storage::disk('s3')->setVisibility($image_path_name,'public');
 
-            $image->image_path = $image_path_name;
+            $image_path_url = Storage::disk('s3')->url($image_path_name);
+
+            $image->image_path = $image_path_url;
         }
 
         $image->save();
@@ -49,6 +54,7 @@ class ImageController extends Controller
         $image = Image::where('id', $fileid)->first();
 
         $file = Storage::disk('images')->get($image->image_path);
+        // $file = Storage::disk('s3')->url($image->image_path);
         return new Response($file,200);
     }
 

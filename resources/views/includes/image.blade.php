@@ -3,7 +3,7 @@
             <div class="text-center pl-3 py-2 m-2">
                 <a href="{{route('user.profile',['id' => $image->user->id])}}">
                     @if($image->user->profile_photo_path)
-                        <img class="h-8 w-8 rounded-full object-cover" src="{{ url('/user/avatar/'.$image->user->id) }}" alt="{{ $image->user->name }}">
+                        <img class="h-8 w-8 rounded-full object-cover" src="{{ $image->user->profile_photo_path }}" alt="{{ $image->user->name }}">
                     @else
                         <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$image->user->name.'+'.$image->user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $image->user->name }}">
                     @endif
@@ -17,7 +17,8 @@
             </div>
         </div>
         
-        <img class="w-full" src="{{ url('/user/image/'.$image->id) }}" alt="Imagen">
+        <!-- <img class="w-full" src="{{ url('/user/image/'.$image->id) }}" alt="Imagen"> -->
+        <img class="w-full" src="{{ $image->image_path }}" alt="Imagen">
         <div class="flex px-4 pt-3">
                 <?php $userLike = false; ?>
                 @foreach($image->likes as $like)

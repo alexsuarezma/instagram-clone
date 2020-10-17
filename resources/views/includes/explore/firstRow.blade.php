@@ -8,7 +8,7 @@
                 margin: auto;
                 min-height: 100%;
                 min-width: 100%;" 
-                src="{{ url('/user/image/'.$image->id) }}" alt="Imagen"
+                src="{{ $image->image_path }}" alt="Imagen"
         />
         <div class="middle">
             <div class="icons">

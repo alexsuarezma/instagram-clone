@@ -1,7 +1,7 @@
 <script src="{{ asset('js/publication.js') }}"></script>
 <div class="flex justify-center">
     <div class="flex items-center w-3/5 h-auto border-r">
-        <img class="w-full" style="max-height:600px;" src="{{ url('/user/image/'.$image->id) }}" alt="Imagen">
+        <img class="w-full" style="max-height:600px;" src="{{ $image->image_path }}" alt="Imagen">
     </div>
     <div class="w-2/5 h-auto">
         <div class="">
@@ -9,7 +9,7 @@
                 <div class="text-center pl-3 py-2 m-2">
                     <a href="{{route('user.profile',['id' => $image->user->id])}}">
                         @if($image->user->profile_photo_path)
-                            <img class="h-8 w-8 rounded-full object-cover" src="{{ url('/user/avatar/'.$image->user->id) }}" alt="{{ $image->user->name }}">
+                            <img class="h-8 w-8 rounded-full object-cover" src="{{ $image->user->profile_photo_path }}" alt="{{ $image->user->name }}">
                         @else
                             <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$image->user->name.'+'.$image->user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $image->user->name }}">
                         @endif
@@ -36,7 +36,7 @@
                 <div class="flex">
                     <div class="w-1/5 py-5 pl-5">
                         @if($image->user->profile_photo_path)
-                            <img class="h-8 w-8 rounded-full object-cover" src="{{ url('/user/avatar/'.$image->user->id) }}" alt="{{ $image->user->name }}">
+                            <img class="h-8 w-8 rounded-full object-cover" src="{{ $image->user->profile_photo_path }}" alt="{{ $image->user->name }}">
                         @else
                             <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$image->user->name.'+'.$image->user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $image->user->name }}">
                         @endif

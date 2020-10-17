@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use  App\Models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -40,10 +40,14 @@ class UserController extends Controller
         // UPLOAD IMAGES
         $profile_photo_path = $request->file('profile_photo_path');
         if($profile_photo_path){
-            $image_path = time().$profile_photo_path->getClientOriginalName();
-            Storage::disk('users')->put( $image_path, File::get($profile_photo_path) );
+            // $image_path = time().$profile_photo_path->getClientOriginalName();
+            // Storage::disk('users')->put( $image_path, File::get($profile_photo_path) );
+            
+            $image_path_name = $profile_photo_path->store('users','s3');
 
-            $user->profile_photo_path = $image_path;
+            $image_path_url = Storage::disk('s3')->url($image_path_name);
+
+            $user->profile_photo_path = $image_path_url;
         }
         
         $user->update();

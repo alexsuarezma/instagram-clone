@@ -73,7 +73,7 @@
                                 <x-slot name="trigger">
                                     <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                                     @if(Auth::user()->profile_photo_path)
-                                        <img class="h-6 w-6 rounded-full object-cover" src="{{ url('/user/avatar/'.Auth::user()->id) }}" alt="{{ Auth::user()->name }}" />
+                                        <img class="h-6 w-6 rounded-full object-cover" src="{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->name }}" />
                                     @else
                                         <img class="h-6 w-6 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     @endif

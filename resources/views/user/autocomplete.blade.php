@@ -5,7 +5,7 @@
         <li class="">
         <a class="py-3 px-3 flex items-center hover:bg-gray-100" href="{{ route('user.profile',['id' => $user->id]) }}">
         @if($user->profile_photo_path)
-            <img class="h-8 w-8 rounded-full object-cover" src="{{ url('/user/avatar/'.$user->id) }}" alt="{{ $user->name }}">
+            <img class="h-8 w-8 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
         @else
             <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$user->name.'+'.$user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $user->name }}">
         @endif
