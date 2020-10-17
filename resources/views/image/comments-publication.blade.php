@@ -2,7 +2,7 @@
     <div id="comment-{{ $comment->id }}" class="flex">
         <a href="{{route('user.profile',['id' => $comment->user->id])}}" class="w-1/5 py-5 pl-5">
             @if($comment->user->profile_photo_path)
-                <img class="h-8 w-8 rounded-full object-cover" src="{{ $image->user->profile_photo_path }}" alt="{{ $comment->user->name }}">
+                <img class="h-8 w-8 rounded-full object-cover" src="{{ $comment->user->profile_photo_path }}" alt="{{ $comment->user->name }}">
             @else
                 <img class="h-8 w-8 rounded-full object-cover"  src="{{ $comment->user->profile_photo_url }}" alt="{{ $comment->user->name }}">
             @endif
