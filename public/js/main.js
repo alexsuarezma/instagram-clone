@@ -43,7 +43,16 @@ function likes(){
 
 }
 // END LIKE
+    $('#form-autocomplete').on('keyup keypress', function(e) { 
+        var keyCode = e.keyCode || e.which; 
+        if (keyCode === 13) { 
+        e.preventDefault(); 
+        return false; 
+        } 
+    }); 
+
     $('#users').keyup(function(){
+
         var query = $(this).val();
         if(query != ''){
             var _token = $('input[name="_token"]').val()

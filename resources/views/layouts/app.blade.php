@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="sm:block hidden w-2/6 sm:flex sm:justify-center items-center">
-                            <form method="POST">
+                            <form id="form-autocomplete" method="POST" autocomplete="off">
                                 @csrf
                                 <input class="border text-center text-sm" type="text" name="" id="users" placeholder="Busca" style="width:200px;">
                             </form>
