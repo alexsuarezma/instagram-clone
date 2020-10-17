@@ -9,6 +9,7 @@
                     Publica una imagen!
                 </div>
                 <div class="w-3/4 mt-6 mb-6 text-gray-500">
+                    <x-jet-validation-errors class="mb-4" />
                     <form method="POST" action="{{ route('image.save') }}" enctype="multipart/form-data">
                         @csrf
                         <div>
