@@ -1,4 +1,5 @@
-const url = 'http://localhost:8080/'
+// const url = 'http://localhost:8080/'
+const url = 'http://instagram-clone-as.herokuapp.com/'
 
 $(document).ready(function() {
 // LIKE 
