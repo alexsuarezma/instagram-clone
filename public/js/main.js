@@ -7,11 +7,14 @@ likes()
 
 function likes(){
     $('.icons').unbind().click(function(){
-    
+        var likesCount = $(`.likes-count-${$(this).children().data('id')}`).text()
+        likesCount = parseInt(likesCount, 10)
+
         var check_like = $(this).children().hasClass('like')
         
         if(check_like){
             $(this).children().removeClass('fas like').addClass('far dislike')
+            $(`.likes-count-${$(this).children().data('id')}`).text(likesCount+1)
             console.log('like');
 
             $.ajax({
@@ -23,7 +26,9 @@ function likes(){
             })
         }else{
             $(this).children().removeClass('fas dislike').addClass('far like')
+            $(`.likes-count-${$(this).children().data('id')}`).text(likesCount-1)
             console.log('dislike');
+
             $.ajax({
                 url : `${url}dislike/${$(this).children().data('id')}`,
                 type : 'GET',

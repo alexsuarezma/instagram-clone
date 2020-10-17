@@ -29,7 +29,7 @@
                         </div>
                         
                         <div class="flex items-center mt-4">
-                            <button type="submit" class="w-full py-1 bg-blue-300 text-white text-sm font-semibold px-2 rounded">
+                            <button type="button" class="w-full py-1 bg-blue-300 text-white text-sm font-semibold px-2 rounded">
                                 Enviar enlace de inicio de sesión
                             </button>
                         </div>
