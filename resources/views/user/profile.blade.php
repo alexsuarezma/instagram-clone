@@ -15,7 +15,7 @@
                         @if($user->profile_photo_path)
                             <img class="w-40 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
                         @else
-                            <img class="w-40 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$user->name.'+'.$user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $user->name }}">
+                            <img class="w-40 rounded-full object-cover"  src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}">
                         @endif
                     </div>
                     <div class="w-3/5 lg:w-4/6">
