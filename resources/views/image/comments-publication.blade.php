@@ -11,8 +11,8 @@
         <a href="{{route('user.profile',['id' => $comment->user->id])}}"><span class="font-bold ...">{{$comment->user->nick}}</span></a> {{$comment->content}}
             <p class="font-thin text-xs">{{\FormatTime::LongTimeFilter($comment->created_at)}}</p>
         </div>
-        <div class="w-1/6 flex py-5 {{\Auth::check() && ($comment->user->id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id) ? '' : 'justify-center'}}">                                        
-        @if(\Auth::check() && ($comment->user->id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id))
+        <div class="w-1/6 flex py-5 {{\Auth::check() && ($comment->user_id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id) ? '' : 'justify-center'}}">                                        
+        @if(\Auth::check() && ($comment->user_id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id))
             <div class="deletecomments">
                 <i data-id="{{ $comment->id }}" style="cursor:pointer; font-size:12px;" class="fas fa-minus pr-3"></i>
             </div>

@@ -18,7 +18,7 @@ class Comment extends Model
     //RELACIÓN MANY TO ONE
 
     public function image(){
-        return $this->belongsTo('App\Models\Image', 'user_id');
+        return $this->belongsTo('App\Models\Image', 'image_id');
     }
 
     use HasFactory;
