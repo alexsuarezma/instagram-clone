@@ -150,7 +150,7 @@
     $(document).ready(function() {
        
         // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
+        Pusher.logToConsole = false;
 
         var pusher = new Pusher('d73c4a93b5f210144e9c', {
         cluster: 'eu'
