@@ -74,4 +74,13 @@ class User extends Authenticatable
     public function followed(){
         return $this->hasMany('App\Models\Follow','user_id_followed');
     }
+
+    // MENSAJES ENVIADOS
+    public function messagesSend(){
+        return $this->hasMany('App\Models\Message','user_id_emisor');
+    }
+    // MENSAJES RECIBIDOS
+    public function messagesRecive(){
+        return $this->hasMany('App\Models\Message','user_id_receptor');
+    }
 }

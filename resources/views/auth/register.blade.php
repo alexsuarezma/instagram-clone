@@ -18,12 +18,12 @@
                         @csrf
 
                         <div>
-                            <x-jet-label value="Name" />
+                            <x-jet-label value="Nombres" />
                             <x-jet-input class="block mt-1 text-sm py-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                         </div>
                         
                         <div>
-                            <x-jet-label value="Surname" />
+                            <x-jet-label value="Apellidos" />
                             <x-jet-input class="block mt-1 text-sm text-sm py-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
                         </div>
 
@@ -38,17 +38,17 @@
                         </div>
 
                         <div>
-                            <x-jet-label value="Password" />
+                            <x-jet-label value="Contraseña" />
                             <x-jet-input class="block mt-1 text-sm py-1 w-full" type="password" name="password" required autocomplete="new-password" />
                         </div>
 
                         <div>
-                            <x-jet-label value="Confirm Password" />
+                            <x-jet-label value="Confirmar contraseña" />
                             <x-jet-input class="block mt-1 text-sm py-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                         </div>
 
                         <div class="flex items-center mt-4">
-                            <button type="submit" class="w-full py-1 bg-blue-300 text-white text-sm font-semibold px-2 rounded">
+                            <button type="submit" class="w-full py-1 bg-blue-600 text-white text-sm font-semibold px-2 rounded">
                                 Registrarte
                             </button>
                         </div>

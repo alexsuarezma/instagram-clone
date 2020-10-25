@@ -1,3 +1,4 @@
+<script src="{{ asset('js/follow-home.js') }}"></script>
 <div class="w-2/5 lg:block hidden">
     <div class="max-w-lg overflow-hidden">
         <div class="flex items-center px-6 py-4">
@@ -36,7 +37,7 @@
                                     </p>
                                 </span>
                             </a>
-                            <a href="{{ url('/followProfile/'.$user->id)}}" class="font-bold text-xs flex items-center text-teal-500">Seguir</a>
+                            <span data-id="{{$user->id}}" class="follow-home cursor-pointer font-bold text-xs flex items-center text-teal-500">Seguir</span>
                         </li>
                     @endif
                 @endforeach

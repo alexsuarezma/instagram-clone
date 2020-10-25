@@ -2,7 +2,7 @@ $(document).ready(function() {
     // MODAL
     
     var openmodal = document.querySelectorAll('.modal-open')
-
+    
         for (var i = 0; i < openmodal.length; i++) {
           openmodal[i].addEventListener('click', function(event){
             event.preventDefault()
@@ -41,19 +41,5 @@ $(document).ready(function() {
         }
         
     // END MODAL
-
-    $('.modal-open').click(function(){
-        
-        $.ajax({
-            url : `${url}publication/${$(this).data('id')}`,
-            type : 'GET' 
-        })
-        .done(function(response){
-            $("#print-publication").html(response);
-        })
-        .fail(function(){
-            console.log("error");
-        });
-    })
 });
     

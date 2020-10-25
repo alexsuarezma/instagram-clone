@@ -75,7 +75,6 @@
                 <a href="{{ url('/image/'.$image->id) }}"><div class="font-thin text-xs py-1">{{\FormatTime::LongTimeFilter($image->created_at)}}</div></a>
             </div>
             <hr>
-            <!-- <form class="w-full" action="{{route('comment.save')}}" method="POST" autocomplete="off"> -->
             <form class="w-full" onsubmit="comentSave(event)" method="POST" autocomplete="off">
                 @csrf
                 <input type="hidden" name="image_id" id="image_id" value="{{$image->id}}">

@@ -5,7 +5,7 @@
                     @if($image->user->profile_photo_path)
                         <img class="h-8 w-8 rounded-full object-cover" src="{{ $image->user->profile_photo_path }}" alt="{{ $image->user->name }}">
                     @else
-                        <img class="h-8 w-8 rounded-full object-cover"  src="{{ url('https://ui-avatars.com/api/?name='.$image->user->name.'+'.$image->user->surname.'&amp;color=7F9CF5&amp;background=EBF4FF') }}" alt="{{ $image->user->name }}">
+                        <img class="h-8 w-8 rounded-full object-cover"  src="{{ $image->user->profile_photo_url }}" alt="{{ $image->user->name }}">
                     @endif
                 </a>
             </div>
@@ -59,14 +59,4 @@
                 </button>
             </div>
         </form>  
-        <!-- <form class="w-full" action="{{route('comment.save')}}" method="POST" autocomplete="off">
-            @csrf
-            <input type="hidden" name="image_id" value="{{$image->id}}">
-            <div class="flex items-center px-2 py-2">
-                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Añade un comentario" name="comment">
-                <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="submit">
-                    Publicar
-                </button>
-            </div>
-        </form>                             -->
     </div>

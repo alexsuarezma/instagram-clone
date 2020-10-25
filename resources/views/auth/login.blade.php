@@ -20,12 +20,12 @@
                         @csrf
 
                         <div>
-                            <x-jet-label value="Email" />
+                            <x-jet-label value="Correo electronico" />
                             <x-jet-input class="block mt-1 text-sm py-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
                         </div>
 
                         <div class="">
-                            <x-jet-label value="Password" />
+                            <x-jet-label value="Contraseña" />
                             <x-jet-input class="block mt-1 text-sm py-1 w-full" type="password" name="password" required autocomplete="current-password" />
                         </div>
 
@@ -36,7 +36,7 @@
                             </label>
                         </div>
                         <div class="flex items-center mt-4">
-                            <button type="submit" class="w-full py-1 bg-blue-300 text-white text-sm font-semibold px-2 rounded">
+                            <button type="submit" class="w-full py-1 bg-blue-600 text-white text-sm font-semibold px-2 rounded">
                                 Iniciar sesión
                             </button>
                         </div>
