@@ -3,7 +3,7 @@
         <div class="w-4/6 text-sm">
             <a href="{{route('user.profile',['id' => $comment->user->id])}}"><span class="font-semibold">{{$comment->user->nick}}</span></a> <span class="thin">{{$comment->content}}</span>
         </div>
-        <div class="w-1/6 flex justify-end {{($comment->user_id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id) ? '' : 'justify-center'}}">                                                                           
+        <div class="w-1/6 flex justify-end {{\Auth::check() && ($comment->user_id == \Auth::user()->id || $comment->image->user_id == \Auth::user()->id) ? '' : 'justify-center'}}">                                                                           
             <a href=""><i style="font-size:12px;" class="far fa-heart"></i></a>
         </div>
     </div>
