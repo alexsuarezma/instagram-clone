@@ -1,7 +1,6 @@
 <a href="#"class="modal-open" data-id="{{$image->id}}">
     <div class="card-fade overflow-hidden bg-gray-400 m-2" style="height:300px;">
-        <img class="photo w-full" style="position:absolute;
-                left: -100%;
+        <img class="photo w-full" style="left: -100%;
                 right: -100%;
                 top: -100%;
                 bottom: -100%;

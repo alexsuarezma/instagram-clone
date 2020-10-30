@@ -2,8 +2,8 @@
     <x-slot name="header">
     </x-slot>
     
-    <div class="bg-gray-100 lg:px-8 px-0 pb-8">
-        <div class="bg-white mt-8 mx-auto w-4/6 border border-gray-300 p-10 lg:w-4/6 w-full h-auto px-0">
+    <div class="bg-gray-100 lg:px-8 px-0 py-8">
+        <div class="bg-white mx-auto w-4/6 border border-gray-300 p-10 lg:w-4/6 w-full h-auto px-0">
             <div class="flex items-center flex-col border-t border-gray-200">
                 <div class="mt-8 text-2xl text-center">
                     Publica una imagen!

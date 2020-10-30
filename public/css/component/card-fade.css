@@ -5,7 +5,6 @@
   
   .photo {
     opacity: 1;
-    display: block;
     width: 100%;
     height: auto;
     transition: .1s ease;

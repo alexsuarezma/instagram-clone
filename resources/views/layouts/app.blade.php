@@ -30,7 +30,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            <nav x-data="{ open: false }" class="bg-white border-b border-gray-300">
+            <nav x-data="{ open: false }" class="fixed w-full bg-white border-b border-gray-300 mb-12 z-30">
                 <!-- Primary Navigation Menu -->
                 <div class="lg:w-4/6 w-full mx-auto lg:px-8 sm:px-6 px-2">
                     <div class="flex lg:justify-around justify-between h-auto">
@@ -166,7 +166,7 @@
             </header> -->
 
             <!-- Page Content -->
-            <main class="bg-white">
+            <main class="bg-white pt-12 z-20">
                 {{ $slot }}
             </main>
         </div>

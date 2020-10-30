@@ -1,5 +1,5 @@
 <script src="{{ asset('js/follow-home.js') }}"></script>
-<div class="w-2/5 lg:block hidden">
+<div class="fixed w-1/4">
     <div class="max-w-lg overflow-hidden">
         <div class="flex items-center px-6 py-4">
             <div class="m-2">

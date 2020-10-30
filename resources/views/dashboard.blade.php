@@ -56,7 +56,9 @@
                 {{$images->links()}}
                 
             </div>
-            @include('includes.sugerencia')        
+            <div class="w-2/5 lg:block hidden">
+              @include('includes.sugerencia')        
+            </div>
         </div>
     </div>
     @include('includes.modal')

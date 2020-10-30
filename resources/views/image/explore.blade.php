@@ -14,7 +14,6 @@
                 $isClose = false;
             @endphp
             <div class="w-full">
-                
                 @foreach($images as $image)
                     @php       
                         $item++;
