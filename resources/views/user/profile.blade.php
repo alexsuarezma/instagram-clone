@@ -13,9 +13,9 @@
                 <div class="flex border-b border-gray-400 pb-4" style="height:220px;">
                     <div class="w-2/5 lg:w-2/6 flex justify-center items-center">
                         @if($user->profile_photo_path)
-                            <img class="w-40 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
+                            <img class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
                         @else
-                            <img class="w-40 rounded-full object-cover"  src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}">
+                            <img class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover"  src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}">
                         @endif
                     </div>
                     <div class="w-3/5 lg:w-4/6">
@@ -88,28 +88,11 @@
                         <span class="pl-2 text-gray-900 font-medium text-sm">PUBLICACIONES</span> 
                     </div>
                 </div>
-                <div class="grid grid-cols-3 place-content-start">
+                <div class="grid grid-cols-3 gap-1 md:gap-3 pt-4">
                     @foreach($user->images as $image)
-                        <a href="#"class="modal-open" data-id="{{$image->id}}">
-                            <div class="card-fade overflow-hidden m-2" style="height:300px;">
-                                <img class="photo w-full" style="position:absolute;
-                                        left: -100%;
-                                        right: -100%;
-                                        top: -100%;
-                                        bottom: -100%;
-                                        margin: auto;
-                                        min-height: 100%;
-                                        min-width: 100%;" 
-                                        src="{{ $image->image_path }}" alt="Imagen"
-                                />
-                                <div class="middle">
-                                    <div class="icons">
-                                        <i style="cursor:pointer; font-size:17px;" class="fas fa-heart" data-id="{{$image->id}}"></i> &nbsp;<span class="font-medium text-base">{{count($image->likes)}}</span>
-                                        <i style="margin-left:25px;-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1);transform: scaleX(-1); filter: FlipH; font-size:17px;" class="fas fa-comment"></i> &nbsp;<span class="font-medium text-base">{{count($image->comments)}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        <div class="">
+                            @include('includes.explore.card')
+                        </div>
                     @endforeach
                 </div>
             </div>

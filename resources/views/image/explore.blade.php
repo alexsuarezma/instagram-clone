@@ -5,94 +5,39 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    
     <div class="bg-gray-50 pt-8">
         <div class="flex justify-center mx-auto w-4/6 h-auto lg:w-4/6 w-full h-auto lg:px-8 px-0">
             @php    
-                $bloque = 1;    
                 $item = 0;
-                $isClose = false;
+                $bloque = 1;
             @endphp
             <div class="w-full">
                 @foreach($images as $image)
-                    @php       
-                        $item++;
-                    @endphp
-                    @if ( ($bloque == 1 || $bloque == 3) && $item == 1 )
-                        <div class="w-full flex">
+                    @php    $item++;    @endphp
+                    
+                    @if ( $item == 1 )
+                        <div class="grid {{($bloque == 1 || $bloque == 3) ? 'grid-flow-col' : ''}} grid-cols-3 grid-rows-2 gap-1 md:gap-8 mb-1 md:mb-8">
                     @endif
-                    <!-- PRIMER BLOQUE -->
-                    @if ( $bloque == 1 )
-                        @if ( $item <= 2 )
-                            @if ( $item == 1 )
-                                <div class="w-2/6">
-                            @endif
-                                <!-- THIRDROW -->
-                                @include('includes.explore.thirdRow')
-                        @endif
-                        @if ( $item == 3 )  
+                            <div class="{{($item == 3 && ($bloque == 1 || $bloque == 3)) ? 'col-span-2 row-span-2' : ''}} {{($bloque == 3 && $item == 3) ? 'col-start-1' : ''}}">
+                                @include('includes.explore.card')
                             </div>
-                            <div class="w-4/6">
-                                <!-- FIRSTROW -->
-                                @include('includes.explore.firstRow')
-                            </div>
-                            @php    
-                                $isClose = true;
-                            @endphp
-                        @endif
-                    @endif
-                    <!-- SEGUNDO BLOQUE -->
-                    @if ( $bloque == 2 )
-                        @if ( $item == 1 )
-                            <div class="w-full grid grid-cols-3 place-content-start">
-                        @endif
-                                @include('includes.explore.secondRow')
-                        @if ( $item == 6 )
-                            </div>
-                            @php    
-                                $isClose = true;
-                            @endphp
-                        @endif   
-                    @endif
-                    <!-- TERCER BLOQUE -->
-                    @if ( $bloque == 3 )
-                        @if ( $item == 1 )  
-                            <div class="w-4/6">
-                                <!-- FIRSTROW -->
-                                @include('includes.explore.firstRow')
-                            </div>
-                        @endif
-                        @if ( $item > 1 )
-                            @if ( $item == 2 )
-                                <div class="w-2/6">
-                            @endif
-                                    <!-- THIRDROW -->
-                                    @include('includes.explore.thirdRow')
-                            @if ( $item == 3 )
-                                </div>
-                                @php    
-                                    $isClose = true;
-                                @endphp
-                            @endif
-                        @endif
-                    @endif
-
-                    @if ( $isClose )
-                        @if ( $bloque == 1 || $bloque == 3 )
-                            </div>
-                        @endif
-                        @if ( $bloque == 3 )
-                            @php    
-                                $bloque=0;
-                            @endphp
+                    @if ( $item == 3 && $bloque != 2)  
+                        </div>
+                        @if ( $bloque == 3 )  
+                            @php    $bloque=1;    @endphp
                         @endif
                         @php    
-                            $bloque++;
                             $item = 0;
-                            $isClose = false;
+                            $bloque++;
                         @endphp
-                    @endif   
-
+                    @endif
+                    @if ( $item == 6)
+                        </div>
+                        @php    
+                            $item = 0;
+                            $bloque++;
+                        @endphp
+                    @endif           
                 @endforeach
             </div>
         </div>            
