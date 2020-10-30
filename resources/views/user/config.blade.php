@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
-    <div class="bg-gray-100 lg:px-10 px-0 pb-8">
-        <div class="flex bg-white mt-8 mx-auto lg:w-4/6 w-full h-screen border border-gray-300">
+    <div class="bg-gray-100 lg:px-10 px-0 py-8">
+        <div class="flex bg-white mx-auto lg:w-4/6 w-full h-screen border border-gray-300">
             <div class="w-2/6 h-screen border-r border-gray-300">
                 <a href="{{ route('config') }}">
                     <li class="border-l-2 border-gray-900 flex py-4 pl-8">
