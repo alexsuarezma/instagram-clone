@@ -1,4 +1,4 @@
-<div class="modal-open card-fade h-full cursor-pointer bg-black relative" data-id="{{$image->id}}">
+<div class="modal-publication card-fade h-full cursor-pointer bg-black relative" onclick="toggleModal('.modal')" data-id="{{$image->id}}">
     <img class="photo object-cover" src="{{ $image->image_path }}" alt="Imagen"/>
     <div class="middle absolute">
         <div class="icons grid grid-flow-col gap-4">

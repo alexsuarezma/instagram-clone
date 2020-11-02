@@ -61,5 +61,6 @@
             </div>
         </div>
     </div>
+    @include('includes.modal-likes')
     @include('includes.modal')
 </x-app-layout>

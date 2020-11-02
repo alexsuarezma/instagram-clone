@@ -77,7 +77,7 @@ Route::get('/like/{image_id}', [LikeController::class, 'like'])->name('like.save
 
 Route::get('/dislike/{image_id}', [LikeController::class, 'dislike'])->name('dislike.save')->middleware('auth');
 
-Route::get('/likes', [LikeController::class, 'likes'])->name('likes')->middleware('auth');
+Route::get('/likes/{image_id}', [LikeController::class, 'likes'])->name('likes')->middleware('auth');
 
 Route::get('/follow/{followId}', [FollowController::class, 'follow'])->name('follow.save')->middleware('auth');
 
@@ -86,6 +86,10 @@ Route::get('/disfollow/{followId}', [FollowController::class, 'disfollow'])->nam
 Route::get('/followProfile/{followId}', [FollowController::class, 'followProfile'])->name('followProfile.save')->middleware('auth');
 
 Route::get('/disfollowProfile/{followId}', [FollowController::class, 'disfollowProfile'])->name('disfollowProfile.save')->middleware('auth');
+
+Route::get('/followers/{idUser}', [FollowController::class, 'followers'])->name('getFollowers')->middleware('auth');
+
+Route::get('/followed/{idUser}', [FollowController::class, 'followed'])->name('getFollowed')->middleware('auth');
 
 Route::get('/direct/inbox', function(){ return view('user.direct'); })->name('user.direct')->middleware('auth');
 

@@ -1,6 +1,46 @@
 // const url = 'http://localhost:8000/'
 const url = 'http://instagram-clone-as.herokuapp.com/'
 
+// MODAL
+var modalTarget = ''
+
+document.onkeydown = function(evt) {
+  evt = evt || window.event
+  var isEscape = false
+  if ("key" in evt) {
+    isEscape = (evt.key === "Escape" || evt.key === "Esc")
+  } else {
+    isEscape = (evt.keyCode === 27)
+  }
+  if (isEscape && document.body.classList.contains('modal-active')) {
+    toggleModal(modalTarget)
+  }
+};
+
+
+function toggleModal (modalName) {
+    modalTarget = modalName
+    const body = document.querySelector('body')
+    const modal = document.querySelector(modalName)
+    modal.classList.toggle('opacity-0')
+    modal.classList.toggle('pointer-events-none')
+    body.classList.toggle('modal-active')
+}
+// END MODAL
+
+function findLikes(){
+    $.ajax({
+        url : `${url}likes/${$(this).data('id')}`,
+        type : 'GET' 
+    })
+    .done(function(response){
+        $(".print-section").html(response);
+    })
+    .fail(function(response){
+        console.log(response)
+    });
+}
+
 $(document).ready(function() {
 // LIKE 
 likes()
@@ -96,6 +136,12 @@ function likes(){
         $(this).removeClass('pl-4').addClass('text-center')
         $('#list').fadeOut()
     })
+
+    
+    $('.likes-modal').click(findLikes)
+   
+
+    
 
 });
     

@@ -130,5 +130,6 @@ $(document).ready(function() {
     
     }
     // END DELETE COMMENT
+    $('.likes-publication-modal').click(findLikes)
 });
     

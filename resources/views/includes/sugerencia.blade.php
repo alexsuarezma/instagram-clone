@@ -2,17 +2,17 @@
 <div class="fixed w-1/4">
     <div class="max-w-lg overflow-hidden">
         <div class="flex items-center px-6 py-4">
-            <div class="m-2">
+            <a class="m-2" href="{{ route('user.profile',['id' => \Auth::user()->id]) }}">
                 @if(Auth::user()->profile_photo_path)
                     <img class="h-12 w-12 rounded-full object-cover" src="{{ \Auth::user()->profile_photo_path }}" alt="{{ \Auth::user()->name }}">
                 @else
                     <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ \Auth::user()->name }}">
                 @endif
-            </div>
-            <div class="text-left pl-2">
+            </a>
+            <a class="text-left pl-2" href="{{ route('user.profile',['id' => \Auth::user()->id]) }}">
                 <p class="font-medium text-sm">{{Auth::user()->nick}}</p>
                 <p class="font-thin text-xs">{{Auth::user()->name}}</p>
-            </div>
+            </a>
         </div>
         <div class="px-6">
             <div class="flex justify-between">

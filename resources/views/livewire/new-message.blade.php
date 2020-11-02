@@ -8,7 +8,7 @@
         <span class="p-3 text-center text-sm font-semibold text-gray-700">Sugerencias </span>
         @foreach($usersFollows as $user)
         <ul class="w-full h-auto">
-            <li class="modal-close py-3 px-4 flex items-center hover:bg-gray-100 cursor-pointer" wire:click="createNewMessage({{$user->id}})">
+            <li class="py-3 px-4 flex items-center hover:bg-gray-100 cursor-pointer" wire:click="createNewMessage({{$user->id}})" onclick="toggleModal('.modal')">
                 @if($user->profile_photo_path)
                     <img class="h-12 w-12 rounded-full object-cover" src="{{ $user->profile_photo_path }}" alt="{{ $user->name }}">
                 @else

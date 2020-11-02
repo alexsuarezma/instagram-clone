@@ -36,16 +36,16 @@
             </a>
         </div>
         <div class="px-4 py-2">
-            <a href=""><div class="font-semibold text-sm py-1"><span class="likes-count-{{$image->id}}">{{count($image->likes)}}</span> Me gusta</div></a>
+            <span class="likes-modal cursor-pointer" onclick="toggleModal('.modal-likes')" data-id="{{$image->id}}"><div class="font-semibold text-sm py-1"><span class="likes-count-{{$image->id}}">{{count($image->likes)}}</span> Me gusta</div></span>
             <span class="font-semibold ...">{{'@'.$image->user->nick}} </span>{{$image->description}}
-            <a href="#" class="modal-open" data-id="{{$image->id}}" >
+            <span class="modal-publication cursor-pointer" onclick="toggleModal('.modal')" data-id="{{$image->id}}">
                 <div class="font-hairline text-sm py-1">
                    {{ (count($image->comments) > 0) ? 'Ver los '.count($image->comments).' comentarios' : '' }}
                 </div>
                 <div id="new-comment-{{ $image->id }}">
 
                 </div>
-            </a>
+            </span>
             <a href="{{ url('/image/'.$image->id) }}"><div class="font-thin text-xs py-1">{{\FormatTime::LongTimeFilter($image->created_at)}}</div></a>
         </div>
         <hr>

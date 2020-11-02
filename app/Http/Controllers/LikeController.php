@@ -49,10 +49,10 @@ class LikeController extends Controller
         }
     }
 
-    public function likes(){
-        $likes = Like::where('user_id', \Auth::user()->id)->paginate(5);
+    public function likes($image_id){
+        $likes = Like::where('image_id', $image_id)->get();
 
-        return view('like.likes',[
+        return view('image.likes',[
             'likes' => $likes
         ]);
     }

@@ -71,7 +71,7 @@
                     </a>
             </div>
             <div class="px-4 py-2">
-                <a href=""><div class="font-semibold text-sm py-1"><span class="likesCount">{{count($image->likes)}}</span> Me gusta</div></a>
+                <span class="likes-publication-modal font-semibold text-sm py-1 cursor-pointer" onclick="toggleModal('.modal-likes')" data-id="{{$image->id}}"><span class="likesCount">{{count($image->likes)}}</span> Me gusta</span>
                 <a href="{{ url('/image/'.$image->id) }}"><div class="font-thin text-xs py-1">{{\FormatTime::LongTimeFilter($image->created_at)}}</div></a>
             </div>
             <hr>
@@ -87,4 +87,5 @@
             </form>  
         </div>
     </div>
+    @include('includes.modal-likes')
 </div>    
