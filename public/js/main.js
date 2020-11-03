@@ -35,9 +35,6 @@ function findLikes(){
     })
     .done(function(response){
         $(".print-section").html(response);
-    })
-    .fail(function(response){
-        console.log(response)
     });
 }
 
@@ -55,7 +52,7 @@ function likes(){
         if(check_like){
             $(this).children().removeClass('fas like').addClass('far dislike')
             $(`.likes-count-${$(this).children().data('id')}`).text(likesCount+1)
-            console.log('like');
+            // console.log('like');
 
             $.ajax({
                 url : `${url}like/${$(this).children().data('id')}`,
@@ -67,7 +64,7 @@ function likes(){
         }else{
             $(this).children().removeClass('fas dislike').addClass('far like')
             $(`.likes-count-${$(this).children().data('id')}`).text(likesCount-1)
-            console.log('dislike');
+            // console.log('dislike');
 
             $.ajax({
                 url : `${url}dislike/${$(this).children().data('id')}`,

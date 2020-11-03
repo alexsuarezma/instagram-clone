@@ -9,9 +9,6 @@ $(document).ready(function() {
         })
         .done(function(response){
             $("#print-publication").html(response);
-        })
-        .fail(function(){
-            console.log("error");
         });
     })
 });

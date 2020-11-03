@@ -18,9 +18,6 @@ function followHome(){
                 success : ()=>{
                     $(this).text("Siguiendo")
                     $('.followed-count').text(followedCount + 1)
-                },
-                error : (response)=>{
-                    console.log(response)
                 }
             })
         }else{
@@ -34,9 +31,6 @@ function followHome(){
                         $(this).text("Seguir")
                     }
                     $('.followed-count').text(followedCount - 1)
-                },
-                error : (response)=>{
-                    console.log(response)
                 }
             })
         }
