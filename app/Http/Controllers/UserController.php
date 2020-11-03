@@ -25,6 +25,7 @@ class UserController extends Controller
             'surname' => 'required|string|max:255',
             'nick'  => 'required|string|max:100|unique:users,nick,'.$id,
             'email'  => 'required|string|email|max:255|unique:users,email,'.$id,
+            'profile_photo_path' => 'image|max:2000',
             ]);
             
         $name = $request->input('name');

@@ -16,7 +16,7 @@ class ImageController extends Controller
 
     public function save(Request $request){
         $validatedData = $request->validate([
-            'image_path' => 'required|image',
+            'image_path' => 'required|image|max:2000',
         ]);
  
         $description = $request->input('description');
